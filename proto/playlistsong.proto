@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package playListSong;
+
+service PlyalistSongService{
+    rpc CreatePlaylistSong(CreatePlaylistSongRequest) returns (CreatePlaylistSongResponse) {}
+    rpc GetPlaylistSong(GetPlaylistSongRequest) returns (GetPlaylistSongResponse) {}
+    rpc UpdatePlaylistSong(UpdatePlaylistSongRequest) returns (UpdatePlaylistSongResponse) {}
+    rpc DeletePlaylistSong(DeletePlaylistSongRequest) returns (DeletePlaylistSongResponse) {}
+}
+
+// CreatePlaylistSongRequest is the request message for the CreatePlaylistSong RPC.
+
+message CreatePlaylistSongRequest {
+    string id = 2;
+    string trackId = 3;
+    string playlistId = 3;
+}
+
+// Response message for the CreatePlaylistSong RPC.
+
+message CreatePlaylistSongResponse {
+    int32 status = 2;
+    repeated string error = 2;
+    string id = 1;
+    string trackPosition = 1;
+}
+
+// GetPlayListSong Request 
+
+message GetPlaylistSongRequest {
+    int32 id = 1;
+}
+
+// Playlist Song Data
+
+message PlaylistSongData {
+    string id = 1;
+    string trackId = 2;
+    string playlistId = 3;
+}
+
+// GetPlayListSong Response
+
+
+message GetPlaylistSongResponse {
+    int32 status = 2;
+    repeated string error = 2;
+    repeated PlaylistSongData data = 2;
+}
+
+
+// UpdatePlaylistSongData
+
+message UpdatePlaylistSongRequest {
+    string ids = 1;
+    string trackId = 2;
+    string playlistId = 3;
+}
+
+// UpdatePlaylistSongResponse
+
+message UpdatePlaylistSongResponse {
+    int32 status = 2;
+    repeated string error = 2;
+    repeated PlaylistSongData data = 2;
+}
+
+// DeletePlaylistSongRequest
+
+message DeletePlaylistSongRequest {
+    string id = 1;
+}
+
+//DeletePlaylistSongResponse
+
+message DeletePlaylistSongResponse {
+    int32 status = 2;
+    repeated string error = 2;
+    bool deleted = 1;
+}
+
