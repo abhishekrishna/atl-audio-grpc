@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package profile;
+
+service ProfileService {
+    rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse) {}
+    rpc GetProfile(GetProfileRequest) returns (GetProfileResponse) {}
+    rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}
+    rpc DeleteProfile(DeleteProfileRequest) returns (DeleteProfileResponse) {}
+}
+
+//get profile service request
+message GetProfileRequest {
+    int32 id = 1;
+
+}
+
+// get profile service response
+message GetProfileResponse {
+    int32 id = 1;
+    ProfileData profileData = 2;
+}
+
+
+//create profileService request
+
+message CreateProfileRequest {
+    int32 id = 1;
+    ProfileData profileData = 2;
+}
+
+// create profile service response
+message CreateProfileResponse {
+    int32 id = 1;
+    string error = 2;
+    string status = 3;
+}
+
+
+//update profile service request message
+message UpdateProfileRequest {
+    int32 id = 1;
+    ProfileData profileData = 3;
+    string error = 4;
+    string status = 5;
+}
+
+
+// profiledata service 
+message ProfileData {
+    string profileName = 2;
+    string profileEmail = 3;
+    string profileContact = 4;
+    string profileGender = 5;
+    string profileDob = 6;
+}
+
+// update profile service response message
+message UpdateProfileResponse {
+    int32 id = 1;
+    string error = 2;
+    string status = 3;
+    
+}
+
+//Delete profile service request message
+message DeleteProfileRequest {
+    int32 id = 1;
+}
+
+//delete profile service response message
+message DeleteProfileResponse {
+    int32 id = 1;
+    string error = 2;
+    string status = 3;
+}

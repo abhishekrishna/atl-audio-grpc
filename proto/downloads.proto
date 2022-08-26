@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package downloads;
+
+service DownloadService {
+  rpc GetDownload(GetDownloadRequest) returns (GetDownloadResponse) {}
+  rpc CreateDownload(CreateDownloadRequest) returns (CreateDownloadResponse) {}
+  rpc UpdateDownload(UpdateDownloadRequest) returns (UpdateDownloadResponse) {}
+  rpc DeleteDownload(DeleteDownloadRequest) returns (DeleteDownloadResponse) {}
+}
+
+// get download request
+
+message GetDownloadRequest {
+  int32 userId = 1;
+}
+
+//get  download response 
+message GetDownloadResponse {
+  repeated DownloadInfo downloads = 1;
+}
+
+//DownloadInfo
+message DownloadInfo {
+  string trackId = 1;
+  string trackUrl = 2;
+  string trackTitle = 3;
+  string trackArtist = 4;
+  string trackDuration = 5;
+}
+
+
+// create  download request
+message CreateDownloadRequest {
+  int32 userId = 1;
+  repeated DownloadInfo downloads = 2;
+}
+
+//create download response
+message CreateDownloadResponse {
+  string id = 1;
+  string status = 2;
+  string error = 3;
+}
+
+//update download request
+message UpdateDownloadRequest {
+  int32 userId = 1;
+}
+
+//update download response
+message UpdateDownloadResponse {
+  string id = 1;
+  string  status = 2;
+  string error = 3;
+}
+
+//delete download request
+ message DeleteDownloadRequest {
+int32 userId = 1;
+ }
+
+//delete download response
+ message DeleteDownloadResponse {
+  int32 userId = 1;
+ }
