@@ -21,7 +21,7 @@ message CreatePlaylistSongRequest {
 
 message CreatePlaylistSongResponse {
     int32 status = 1;
-    repeated string error = 2;
+    string error = 2;
     int32 id = 3;
     int32 trackPosition = 4;
 }
@@ -45,7 +45,7 @@ message PlaylistSongData {
 
 message GetPlaylistSongResponse {
     int32 status = 1;
-    repeated string error = 2;
+    string error = 2;
     repeated PlaylistSongData data = 3;
 }
 
@@ -62,7 +62,7 @@ message UpdatePlaylistSongRequest {
 
 message UpdatePlaylistSongResponse {
     int32 status = 1;
-    repeated string error = 2;
+    string error = 2;
     repeated PlaylistSongData data = 3;
 }
 
@@ -76,7 +76,7 @@ message DeletePlaylistSongRequest {
 
 message DeletePlaylistSongResponse {
     int32 status = 1;
-    repeated string error = 2;
+    string error = 2;
     bool deleted = 3;
 }
 
