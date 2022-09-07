@@ -12,18 +12,18 @@ service PlyalistSongService{
 // CreatePlaylistSongRequest is the request message for the CreatePlaylistSong RPC.
 
 message CreatePlaylistSongRequest {
-    string id = 2;
-    string trackId = 3;
-    string playlistId = 3;
+    int32 id = 1;
+    int32 trackId = 2;
+    int32 playlistId = 3;
 }
 
 // Response message for the CreatePlaylistSong RPC.
 
 message CreatePlaylistSongResponse {
-    int32 status = 2;
+    int32 status = 1;
     repeated string error = 2;
-    string id = 1;
-    string trackPosition = 1;
+    int32 id = 3;
+    int32 trackPosition = 4;
 }
 
 // GetPlayListSong Request 
@@ -35,9 +35,9 @@ message GetPlaylistSongRequest {
 // Playlist Song Data
 
 message PlaylistSongData {
-    string id = 1;
-    string trackId = 2;
-    string playlistId = 3;
+    int32 id = 1;
+    int32 trackId = 2;
+    int32 playlistId = 3;
 }
 
 // GetPlayListSong Response
@@ -53,9 +53,9 @@ message GetPlaylistSongResponse {
 // UpdatePlaylistSongData
 
 message UpdatePlaylistSongRequest {
-    string ids = 1;
-    string trackId = 2;
-    string playlistId = 3;
+    int32 ids = 1;
+    int32 trackId = 2;
+    int32 playlistId = 3;
 }
 
 // UpdatePlaylistSongResponse
@@ -69,7 +69,7 @@ message UpdatePlaylistSongResponse {
 // DeletePlaylistSongRequest
 
 message DeletePlaylistSongRequest {
-    string id = 1;
+    int32 id = 1;
 }
 
 //DeletePlaylistSongResponse
