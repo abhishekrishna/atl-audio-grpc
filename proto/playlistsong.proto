@@ -44,9 +44,9 @@ message PlaylistSongData {
 
 
 message GetPlaylistSongResponse {
-    int32 status = 2;
+    int32 status = 1;
     repeated string error = 2;
-    repeated PlaylistSongData data = 2;
+    repeated PlaylistSongData data = 3;
 }
 
 
@@ -61,9 +61,9 @@ message UpdatePlaylistSongRequest {
 // UpdatePlaylistSongResponse
 
 message UpdatePlaylistSongResponse {
-    int32 status = 2;
+    int32 status = 1;
     repeated string error = 2;
-    repeated PlaylistSongData data = 2;
+    repeated PlaylistSongData data = 3;
 }
 
 // DeletePlaylistSongRequest
@@ -75,8 +75,8 @@ message DeletePlaylistSongRequest {
 //DeletePlaylistSongResponse
 
 message DeletePlaylistSongResponse {
-    int32 status = 2;
+    int32 status = 1;
     repeated string error = 2;
-    bool deleted = 1;
+    bool deleted = 3;
 }
 
