@@ -12,10 +12,11 @@ service TrackService {
 // Create Track Request
 
 message CreateTrackRequest {
-  int32 trackId = 1;
-  string trackTitle = 2;
-  string trackArtwork = 3;
-  string trackUrl = 4;
+  string trackTitle = 1;
+  string albumName = 2;
+  string artistName = 3;
+  string trackArtwork = 4;
+  string trackUrl = 5;
 }
 
 // Create Track Response

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package playlistsong;
+package playListSong;
 
 service PlyalistSongService{
     rpc CreatePlaylistSong(CreatePlaylistSongRequest) returns (CreatePlaylistSongResponse) {}
@@ -14,16 +14,16 @@ service PlyalistSongService{
 message CreatePlaylistSongRequest {
     string id = 2;
     string trackId = 3;
-    string playlistId = 4;
+    string playlistId = 3;
 }
 
 // Response message for the CreatePlaylistSong RPC.
 
 message CreatePlaylistSongResponse {
     int32 status = 2;
-    repeated string error = 3;
+    repeated string error = 2;
     string id = 1;
-    string trackPosition = 4;
+    string trackPosition = 1;
 }
 
 // GetPlayListSong Request 
@@ -45,8 +45,8 @@ message PlaylistSongData {
 
 message GetPlaylistSongResponse {
     int32 status = 2;
-    repeated string error = 1;
-    repeated PlaylistSongData data = 3;
+    repeated string error = 2;
+    repeated PlaylistSongData data = 2;
 }
 
 
@@ -62,8 +62,8 @@ message UpdatePlaylistSongRequest {
 
 message UpdatePlaylistSongResponse {
     int32 status = 2;
-    repeated string error = 1;
-    repeated PlaylistSongData data = 3;
+    repeated string error = 2;
+    repeated PlaylistSongData data = 2;
 }
 
 // DeletePlaylistSongRequest
@@ -76,7 +76,7 @@ message DeletePlaylistSongRequest {
 
 message DeletePlaylistSongResponse {
     int32 status = 2;
-    repeated string error = 3;
+    repeated string error = 2;
     bool deleted = 1;
 }
 
