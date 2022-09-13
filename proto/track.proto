@@ -52,6 +52,16 @@ message GetTrackResponse {
   TrackData trackData = 3;
 }
 
+//Get all tracks
+message GetAllTrackRequest {
+};
+
+// Get all tracks response
+message GetAllTrackResponse {
+  repeated string error = 1;
+  repeated TrackData trackData = 2;
+}
+
 //Update Track Request
 
 message UpdateTrackRequest {
