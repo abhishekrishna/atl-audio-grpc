@@ -5,6 +5,7 @@ package track;
 service TrackService {
   rpc CreateTrack (CreateTrackRequest) returns (CreateTrackResponse) {}
   rpc GetTrack (GetTrackRequest) returns (GetTrackResponse) {}
+  rpc GetAllTrack (GetAllTrackRequest) returns (GetAllTrackResponse) {}
   rpc UpdateTrack (UpdateTrackRequest) returns (UpdateTrackResponse) {}
   rpc DeleteTrack (DeleteTrackRequest) returns (DeleteTrackResponse) {}
 }
