@@ -2,12 +2,11 @@ syntax = "proto3";
 
 package track;
 
-import "google/protobuf/empty.proto";
 
 service TrackService {
   rpc CreateTrack (CreateTrackRequest) returns (CreateTrackResponse) {}
   rpc GetTrack (GetTrackRequest) returns (GetTrackResponse) {}
-  rpc GetAllTrack (google.protobuf.Empty) returns (GetAllTrackResponse) {}
+  rpc GetAllTrack (GetAllTrackRequest) returns (GetAllTrackResponse) {} 
   rpc UpdateTrack (UpdateTrackRequest) returns (UpdateTrackResponse) {}
   rpc DeleteTrack (DeleteTrackRequest) returns (DeleteTrackResponse) {}
 }
@@ -55,6 +54,8 @@ message GetTrackResponse {
   repeated TrackData trackData = 3;
 }
 
+//Get all tracks
+message GetAllTrackRequest {}
 
 // Get all tracks response
 message GetAllTrackResponse {
