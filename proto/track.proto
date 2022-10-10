@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+package track;
+
+
+service TrackService {
+  rpc CreateTrack (CreateTrackRequest) returns (CreateTrackResponse) {}
+  rpc GetTrack (GetTrackRequest) returns (GetTrackResponse) {}
+  rpc GetAllTrack (GetAllTrackRequest) returns (GetAllTrackResponse) {} 
+  rpc UpdateTrack (UpdateTrackRequest) returns (UpdateTrackResponse) {}
+  rpc DeleteTrack (DeleteTrackRequest) returns (DeleteTrackResponse) {}
+}
+
+// Create Track Request
+
+message CreateTrackRequest {
+  string trackTitle = 1;
+  string albumName = 2;
+  string artistName = 3;
+  string trackArtwork = 4;
+  string trackUrl = 5;
+}
+
+// Create Track Response
+
+message CreateTrackResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
+
+//Read Track Request
+
+message GetTrackRequest {
+  int32 id = 1;
+}
+
+// Track Data
+
+message TrackData {
+  int32 id = 1;
+  string trackTitle = 2;
+  string albumName = 3;
+  string artistName = 4;
+  string trackArtwork = 5;
+  string trackUrl = 6;
+}
+
+//Read Track Response
+
+message GetTrackResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  repeated TrackData trackData = 3;
+}
+
+//Get all tracks
+message GetAllTrackRequest {}
+
+// Get all tracks response
+message GetAllTrackResponse {
+  repeated string error = 1;
+  repeated TrackData trackData = 2;
+}
+
+//Update Track Request
+
+message UpdateTrackRequest {
+  int32 id = 1;
+  string trackTitle = 2;
+  string albumName = 3;
+  string artistName = 4;
+  string trackArtwork = 5;
+  string trackUrl = 6;
+}
+
+//Update Track Response
+
+message UpdateTrackResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  
+}
+
+// DeleteTrackRequest
+
+message DeleteTrackRequest {
+  int32 id = 1;
+}
+
+// DeleteTrackResponse
+
+message DeleteTrackResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
