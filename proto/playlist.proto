@@ -15,10 +15,6 @@ message CreatePlaylistRequest {
   string name = 1;
   string description = 2;
   string userId = 3;
-<<<<<<< HEAD
-=======
-  int32 id = 4;
->>>>>>> ef8a24e3759983d4ec367d5e07d35935f2b15307
 }
 
 // CreatePlaylistResponse is the response message for the CreatePlaylist RPC.
@@ -51,7 +47,6 @@ message GetPlaylistResponse {
   PlaylistData playlistData = 3;
 }
 
-<<<<<<< HEAD
 
 //Get all playlist for a user
 message GetAllPlaylistRequest {
@@ -65,8 +60,6 @@ message GetAllPlaylistResponse {
 }
 
 
-=======
->>>>>>> ef8a24e3759983d4ec367d5e07d35935f2b15307
 // UpdatePlaylistRequest is the request message for the UpdatePlaylist RPC.
 
 message UpdatePlaylistRequest {
