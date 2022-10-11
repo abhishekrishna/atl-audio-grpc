@@ -5,6 +5,7 @@ package playlist;
 service PlaylistService {
   rpc CreatePlaylist(CreatePlaylistRequest) returns (CreatePlaylistResponse) {}
   rpc GetPlaylist(GetPlaylistRequest) returns (GetPlaylistResponse) {}
+  rpc GetAllPlaylist(GetAllPlaylistRequest) returns (GetAllPlaylistResponse) {}
   rpc UpdatePlaylist(UpdatePlaylistRequest) returns (UpdatePlaylistResponse) {}
   rpc DeletePlaylist(DeletePlaylistRequest) returns (DeletePlaylistResponse) {}
 }
