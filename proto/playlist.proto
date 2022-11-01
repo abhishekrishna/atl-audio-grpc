@@ -15,35 +15,35 @@ service PlaylistService {
 message CreatePlaylistRequest {
   string name = 1;
   string description = 2;
-  string userId = 3;
+  int32 userId = 3;
 }
 
 // CreatePlaylistResponse is the response message for the CreatePlaylist RPC.
 
 message CreatePlaylistResponse {
-  string id = 1;
+  int32 id = 1;
   repeated string error = 2;
 }
 
 // GetPlaylistRequest is the request message for the GetPlaylist RPC.
 
 message GetPlaylistRequest {
-  string playlistId = 1;
+  int32 playlistId = 1;
 }
 
 // Playlist Data
 
 message PlaylistData {
-  string id = 1;
+  int32 id = 1;
   string name = 2;
   string description = 3;
-  string userId = 4;
+  int32 userId = 4;
 }
 
 // GetPlaylistResponse is the response message for the GetPlaylist RPC.
 
 message GetPlaylistResponse {
-  string id = 1;
+  int32 id = 1;
   repeated string error = 2;
   PlaylistData playlistData = 3;
 }
@@ -51,7 +51,7 @@ message GetPlaylistResponse {
 
 //Get all playlist for a user
 message GetAllPlaylistRequest {
-  string userId = 1;
+  int32 userId = 1;
 }
 
 // Get all tracks response
@@ -64,29 +64,29 @@ message GetAllPlaylistResponse {
 // UpdatePlaylistRequest is the request message for the UpdatePlaylist RPC.
 
 message UpdatePlaylistRequest {
-  string id = 1;
+  int32 id = 1;
   string name = 2;
   string description = 3;
-  string userId = 4;
+  int32 userId = 4;
   repeated string songs = 5;
 }
 
 // UpdatePlaylistResponse is the response message for the UpdatePlaylist RPC.
 
 message UpdatePlaylistResponse {
-  string id = 1;
+  int32 id = 1;
   repeated string error = 2;
 }
 
 // DeletePlaylistRequest is the request message for the DeletePlaylist RPC.
 
 message DeletePlaylistRequest {
-  string id = 1;
+  int32 id = 1;
 }
 
 // DeletePlaylistResponse is the response message for the DeletePlaylist RPC.
 
 message DeletePlaylistResponse {
-  string id = 1;
+  int32 id = 1;
   repeated string error = 2;
 }
