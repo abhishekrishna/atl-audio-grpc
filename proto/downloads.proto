@@ -5,6 +5,7 @@ package downloads;
 service DownloadService {
   rpc GetDownload(GetDownloadRequest) returns (GetDownloadResponse) {}
   rpc CreateDownload(CreateDownloadRequest) returns (CreateDownloadResponse) {}
+  rpc GetAllDownload(GetAllDownloadRequest) returns (GetAllDownloadResponse) {}
   rpc UpdateDownload(UpdateDownloadRequest) returns (UpdateDownloadResponse) {}
   rpc DeleteDownload(DeleteDownloadRequest) returns (DeleteDownloadResponse) {}
 }
@@ -12,7 +13,7 @@ service DownloadService {
 // get download request
 
 message GetDownloadRequest {
-  int32 userId = 1;
+  int32 id = 1;
 }
 
 //get  download response 
@@ -42,6 +43,18 @@ message CreateDownloadResponse {
   string status = 2;
   string error = 3;
 }
+
+//Get all download request
+message GetAllDownloadRequest {
+  string userId = 1;
+}
+
+// Get all download response message
+message GetAllDownloadResponse {
+  string error = 1;
+  repeated DownloadInfo downloadData = 2;
+}
+
 
 //update download request
 message UpdateDownloadRequest {
