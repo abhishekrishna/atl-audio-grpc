@@ -37,7 +37,7 @@ message PlaylistData {
   int32 id = 1;
   string name = 2;
   string description = 3;
-  int32 userId = 4;
+  string userId = 4;
 }
 
 // GetPlaylistResponse is the response message for the GetPlaylist RPC.
