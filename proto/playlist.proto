@@ -88,5 +88,5 @@ message DeletePlaylistRequest {
 
 message DeletePlaylistResponse {
   int32 id = 1;
-  repeated string error = 2;
+  repeated string status = 2;
 }
