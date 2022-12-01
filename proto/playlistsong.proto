@@ -50,6 +50,16 @@ message GetPlaylistSongResponse {
 }
 
 
+//GetallplaylistsongRequest
+message GetAllPlaylistSongRequest{
+    int32 userId = 1;
+}
+
+//Get all playlistsong response
+message GetAllPlaylistSongResponse {
+    int32 id = 1;
+    repeated PlaylistSongData data = 2;
+}
 // UpdatePlaylistSongData
 
 message UpdatePlaylistSongRequest {
