@@ -53,7 +53,7 @@ message GetPlaylistSongResponse {
 // UpdatePlaylistSongData
 
 message UpdatePlaylistSongRequest {
-    int32 ids = 1;
+    int32 id = 1;
     int32 trackId = 2;
     int32 playlistId = 3;
 }
