@@ -5,6 +5,7 @@ package playListSong;
 service PlyalistSongService{
     rpc CreatePlaylistSong(CreatePlaylistSongRequest) returns (CreatePlaylistSongResponse) {}
     rpc GetPlaylistSong(GetPlaylistSongRequest) returns (GetPlaylistSongResponse) {}
+    rpc GetAllPlaylistSong(GetAllPlaylistSongRequest) returns (GetAllPlaylistSongResponse) {}
     rpc UpdatePlaylistSong(UpdatePlaylistSongRequest) returns (UpdatePlaylistSongResponse) {}
     rpc DeletePlaylistSong(DeletePlaylistSongRequest) returns (DeletePlaylistSongResponse) {}
 }
@@ -12,8 +13,8 @@ service PlyalistSongService{
 // CreatePlaylistSongRequest is the request message for the CreatePlaylistSong RPC.
 
 message CreatePlaylistSongRequest {
-    int32 trackId = 2;
-    int32 playlistId = 3;
+    int32 trackId = 1;
+    int32 playlistId = 2;
 }
 
 // Response message for the CreatePlaylistSong RPC.
