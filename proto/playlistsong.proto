@@ -29,7 +29,7 @@ message CreatePlaylistSongResponse {
 // GetPlayListSong Request 
 
 message GetPlaylistSongRequest {
-    int32 id = 1;
+    int32 playlistId = 1;
 }
 
 // Playlist Song Data
@@ -52,7 +52,7 @@ message GetPlaylistSongResponse {
 
 //GetallplaylistsongRequest
 message GetAllPlaylistSongRequest{
-    int32 userId = 1;
+    int32 playlistId = 1;
 }
 
 //Get all playlistsong response
