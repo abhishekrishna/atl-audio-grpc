@@ -51,7 +51,7 @@ message TrackData {
 message GetTrackResponse {
   int32 status = 1;
   repeated string error = 2;
-  repeated TrackData trackData = 3;
+  TrackData trackData = 3;
 }
 
 //Get all tracks
