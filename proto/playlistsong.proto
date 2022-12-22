@@ -15,6 +15,8 @@ service PlyalistSongService{
 message CreatePlaylistSongRequest {
     int32 trackId = 1;
     int32 playlistId = 2;
+    repeated TrackData trackData = 3;
+    string playlistName = 4;
 }
 
 // Response message for the CreatePlaylistSong RPC.
@@ -38,8 +40,22 @@ message PlaylistSongData {
     int32 id = 1;
     int32 trackId = 2;
     int32 playlistId = 3;
+    string playlistName = 4;
+    repeated TrackData trackData = 5;
 }
 
+
+//Track Data
+
+message TrackData {
+    int32 id = 1;
+    string trackTitle = 2;
+    string albumName = 3;
+    string artistName = 4;
+    string trackArtwork = 5;
+    string trackUrl = 6;
+  }
+  
 // GetPlayListSong Response
 
 
