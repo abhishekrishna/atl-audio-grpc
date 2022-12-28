@@ -15,7 +15,7 @@ service PlyalistSongService{
 message CreatePlaylistSongRequest {
     int32 trackId = 1;
     int32 playlistId = 2;
-    repeated TrackData trackData = 3;
+    TrackData trackData = 3;
     string playlistName = 4;
 }
 
