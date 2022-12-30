@@ -3,25 +3,27 @@ syntax = "proto3";
 package playListSong;
 
 service PlyalistSongService{
-    rpc CreatePlaylistSong(CreatePlaylistSongRequest) returns (CreatePlaylistSongResponse) {}
-    rpc GetPlaylistSong(GetPlaylistSongRequest) returns (GetPlaylistSongResponse) {}
-    rpc GetAllPlaylistSong(GetAllPlaylistSongRequest) returns (GetAllPlaylistSongResponse) {}
-    rpc UpdatePlaylistSong(UpdatePlaylistSongRequest) returns (UpdatePlaylistSongResponse) {}
-    rpc DeletePlaylistSong(DeletePlaylistSongRequest) returns (DeletePlaylistSongResponse) {}
+    rpc AddTrackToPlaylist(AddTrackToPlaylistRequest) returns (AddTrackPlaylistResponse) {}
+    rpc GetTracksOfPlaylist(GetAllTracksOfPlaylistRequest) returns (GetAllTracksOfPlaylistSongResponse) {}
+    rpc RemoveTrackFromPlaylist(RemoveTrackFromPlaylistRequest) returns (RemoveTrackFromPlaylistResponse) {}
 }
 
 // CreatePlaylistSongRequest is the request message for the CreatePlaylistSong RPC.
 
-message CreatePlaylistSongRequest {
+message AddTrackToPlaylistRequest {
     int32 trackId = 1;
     int32 playlistId = 2;
-    TrackData trackData = 3;
-    string playlistName = 4;
+    string trackTitle = 3;
+    string albumName = 4;
+    string artistName = 5;
+    string trackArtwork = 6;
+    string trackUrl = 7;
+    string playlistName = 8;
 }
 
 // Response message for the CreatePlaylistSong RPC.
 
-message CreatePlaylistSongResponse {
+message AddTrackPlaylistResponse {
     int32 status = 1;
     string error = 2;
     int32 id = 3;
@@ -30,7 +32,7 @@ message CreatePlaylistSongResponse {
 
 // GetPlayListSong Request 
 
-message GetPlaylistSongRequest {
+message GetAllTracksOfPlaylistRequest {
     int32 playlistId = 1;
 }
 
@@ -59,7 +61,7 @@ message TrackData {
 // GetPlayListSong Response
 
 
-message GetPlaylistSongResponse {
+message GetAllTracksOfPlaylistSongResponse {
     int32 status = 1;
     string error = 2;
     repeated PlaylistSongData data = 3;
@@ -76,31 +78,17 @@ message GetAllPlaylistSongResponse {
     int32 id = 1;
     repeated PlaylistSongData data = 2;
 }
-// UpdatePlaylistSongData
 
-message UpdatePlaylistSongRequest {
-    int32 id = 1;
-    int32 trackId = 2;
-    int32 playlistId = 3;
-}
-
-// UpdatePlaylistSongResponse
-
-message UpdatePlaylistSongResponse {
-    int32 status = 1;
-    string error = 2;
-    repeated PlaylistSongData data = 3;
-}
 
 // DeletePlaylistSongRequest
 
-message DeletePlaylistSongRequest {
+message RemoveTrackFromPlaylistRequest {
     int32 id = 1;
 }
 
 //DeletePlaylistSongResponse
 
-message DeletePlaylistSongResponse {
+message RemoveTrackFromPlaylistResponse {
     int32 status = 1;
     string error = 2;
     bool deleted = 3;
