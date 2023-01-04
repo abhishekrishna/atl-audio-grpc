@@ -83,7 +83,8 @@ message GetAllPlaylistSongResponse {
 // DeletePlaylistSongRequest
 
 message RemoveTrackFromPlaylistRequest {
-    int32 id = 1;
+    int32 playlistId = 1;
+    int32 trackId = 2;
 }
 
 //DeletePlaylistSongResponse
