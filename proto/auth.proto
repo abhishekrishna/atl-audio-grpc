@@ -19,7 +19,10 @@ service ProfileService {
 
 //Verify the OTP with Email and Password
 message VerifyRequest {
-  int32 code = 1;message VerifyResponse {
+  int32 code = 1;
+}
+
+message VerifyResponse {
   repeated string message = 1;
   bool result = 2;
 }
