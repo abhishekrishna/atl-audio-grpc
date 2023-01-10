@@ -6,6 +6,7 @@ service AuthService {
   rpc Register (RegisterRequest) returns (RegisterResponse) {}
   rpc Login (LoginRequest) returns (LoginResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
+  rpc Logout (LogoutRequest) returns (LogoutResponse) {}
 }
 
 service ProfileService {
@@ -96,6 +97,9 @@ message RegisterResponse {
   repeated string error = 2;
 }
 
+
+
+
 // Login
 
 message LoginRequest {
@@ -119,4 +123,13 @@ message ValidateResponse {
   int32 status = 1;
   repeated string error = 2;
   int32 userId = 3;
+}
+
+//logout request
+message LogoutRequest {
+  string userId = 1;
+}
+
+message LogoutResponse {
+  string status = 1;
 }
